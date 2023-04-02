@@ -27,9 +27,19 @@ position: relative
 .pokemon__image{
     position: absolute;
     bottom: 58%;
-    left: 55%;
+    left: 32%;
     transform: translate(-63%, 0);
-    height: 30%;
+    height: 28%;
+    animation: jump 0.5s infinite alternate;
+}
+
+@keyframes jump {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-18%);
+  }
 }
 
 .pokedata{
@@ -65,7 +75,7 @@ position: relative
 .buttons{
     display: flex;
     position: absolute;
-    bottom: 35.5%;
+    bottom: 35.6%;
     left: 36%;
     width: 20%;
     transform:  translate(-57%, 0);
@@ -88,6 +98,31 @@ position: relative
   }
 
 
+  .pokemon__status {
+  position: absolute;
+  top: 20%;
+  left: 5.1%;
+  transform: translate(-63%, 0);
+  font-size: clamp(8px, 5vw, 25px);
+  text-align: left;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 20px;
+  width: 40%;
+  text-transform: capitalize;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  }
   
+  .status-name {
+    margin-top: 5px;
+    font-weight: 600;
+  }
+  
+  .status-value {
+    margin-bottom: 10px;
+  }
+  
+
   
   

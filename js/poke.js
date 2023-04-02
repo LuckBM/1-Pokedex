@@ -19,7 +19,6 @@ const fetchPoke = async (pokemon) => {
  
 
 const renderPoke = async (pokemon) => {
-    
   pokemonName.innerHTML = 'carregando...';
 
   const data = await fetchPoke(pokemon);
@@ -29,13 +28,27 @@ const renderPoke = async (pokemon) => {
     pokemonNumber.innerHTML = data.id;
     pokeImage.src = data['sprites']['versions']['generation-viii']['icons']['front_default'] || ['sprites']['versions']['generation-viii']['icons']['front_default'];
     input.value = '';
-    searchPoken = data.id
+    searchPoken = data.id;
+
+    const nameElement = document.querySelector('.name');
+    nameElement.innerHTML = data.name;
+
+    const typeElement = document.querySelector('.type');
+    typeElement.innerHTML = data.types.map(type => type.type.name).join(', ');
+
+    const heightElement = document.querySelector('.height');
+    heightElement.innerHTML = `${data.height / 10} m`;
+
+    const weightElement = document.querySelector('.weight');
+    weightElement.innerHTML = `${data.weight / 10} kg`;
+
   } else {
     pokeImage.style.display = 'none';
     pokemonName.innerHTML = 'Pokémon não encontrado ;-;';
     pokemonNumber.innerHTML = '';
   }
 };
+
 
 renderPoke(searchPoken);
 
@@ -57,3 +70,6 @@ buttonNext.addEventListener('click', () => {
       renderPoke(searchPoken);
     }
   });
+
+
+  
