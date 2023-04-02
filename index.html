@@ -6,15 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./favicons/pokeicon.png">
     <link rel="stylesheet" href="./css/pokedex.css">
+    <script defer src="./js/poke.js"></script>
     <title>Pokedex</title>
 </head>
 <body>
     <main>
         <h1 class="pokedata">
-        <span class="numberpoke">6 -</span>
-        <span class="pokename">eevee</span>
+        <span class="numberpoke"></span> -
+        <span class="pokename"></span>
         </h1>
-        <img src="https://i.pinimg.com/originals/69/ab/01/69ab01b062af6d4195423aa866efcc27.png" alt="pokemon" class="pokemon__image">
+        <form class="form">
+            <input type="search"
+            class="searchinput"
+            placeholder="Nome ou Número"
+            required
+            />
+        </form>
+        <div class="buttons">
+            <button class="button btn-prev"> &lt; </button>
+            <button class="button btn-next"> &gt; </button>
+        </div>
+        <img src="" alt="pokemon" class="pokemon__image">
         <img src="./images/gameboy1.png" alt="pokedex" class="pokedex">
     </main>
     
